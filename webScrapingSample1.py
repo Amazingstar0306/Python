@@ -31,17 +31,18 @@ for container in containers:
 
     product_name = container.img["alt"]
     print(product_name)
-    price_container = container.find_all("div", {"class": "col col-5-12 _2o7WAb"})
+    price_container = container.find_all("div", {"class": "col col-5-12 nlI3QM"})
     price = price_container[0].text.strip()
-
-    rating_container = container.find_all("div", {"class": "niH0FQ"})
+    print(price)
+    rating_container = container.find_all("div", {"class": "gUuXy-"})
     ratings = rating_container[0].text
-
+    print(ratings)
     # print("product_name:"+product_name)
     # print("price:"+price)
     # print("ratings:"+ str(ratings))
 
-    edit_price = ''.join(price.split(','))
+    edit_price = '?'.join(price.split('₹'))
+    print((edit_price))
     sym_rupee = edit_price.split("?")
     add_rs_price = "Rs" + sym_rupee[1]
     split_price = add_rs_price.split("E")
